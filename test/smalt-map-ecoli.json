@@ -1,0 +1,13 @@
+{
+    "index_name": "ecoli",
+    "query_file": {
+        "path": "input/ecoli.small_R1.fastq",
+        "class": File
+    },
+    "mate_file": {
+        "path": "input/ecoli.small_R2.fastq",
+        "class": File
+    },
+    "output_format": "bam",
+    "output_filename": "ecoli.small.bam"
+}

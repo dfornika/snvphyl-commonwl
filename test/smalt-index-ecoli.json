@@ -1,0 +1,9 @@
+{
+  "word_length": 13,
+  "step_size": 6,
+  "index_name": "ecoli",
+  "reference": {
+    "path": "input/ecoli_k12_ref.fa",
+    "class": File
+  }
+}
