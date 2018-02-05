@@ -13,14 +13,10 @@ inputs:
 - id: smalt_map::output_filename
   type: string
 - id: smalt_map::R1_reads
-  type:
-  - type: array
-    items: File
+  type: File
   doc: list of files containing the first end of paired end reads in fasta or fastq
 - id: smalt_map::R2_reads
-  type:
-  - type: array
-    items: File
+  type: File
   doc: list of files containing the second end of paired end reads in fasta or fastq  
 - id: reference
   type: File
@@ -43,9 +39,13 @@ steps:
     - {id: smalt_index}
     - {id: smalt_array}
 - id: smalt_map
+  requirements:
+    - class: StepInputExpressionRequirement
   run: tools/smalt-map.cwl
   in:
-    index_name: $(smalt_index/smalt_index.out.basename)
+    index_name:
+      source: smalt_index/smalt_index
+      valueFrom: $(self.basename)
     query_file: '#smalt_map::R1_reads'
     mate_file: '#smalt_map::R2_reads'
     output_format: '#smalt_map::output_format'

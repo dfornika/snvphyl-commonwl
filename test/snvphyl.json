@@ -1,10 +1,25 @@
 {
-    "reference": "input/ecoli_k12_ref.fa",
-    "smalt_map::R1_reads": "input/ecoli.small_R1.fastq",
-    "smalt_map::R2_reads": "input/ecoli.small_R2.fastq",
+    "$namespaces": {
+        "edam": "http://edamontology.org/"
+    },
+    "reference": {
+        "path": "input/ecoli_k12_ref.fa",
+        "class": File,
+        "format": "edam:format_1929"
+    },
+    "smalt_map::R1_reads": {
+        "path": "input/ecoli.small_R1.fastq",
+        "class": File
+    },
+    "smalt_map::R2_reads": {
+        "path": "input/ecoli.small_R2.fastq",
+        "class": File
+    },
     "smalt_index::word_length": 13,
     "smalt_index::step_size": 6,
     "smalt_map::output_format": "bam",
     "smalt_map::output_filename": "intermediate/ecoli.small.bam",
     "smalt_map::index_name": "ecoli"
 }
+
+

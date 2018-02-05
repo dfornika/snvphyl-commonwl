@@ -64,4 +64,4 @@ $namespaces:
   doap: http://usefulinc.com/ns/doap#
 $schemas:
   - http://edamontology.org/EDAM_1.18.owl
-  - https://github.com/edumbill/doap/blob/master/schema/doap.rdf
+  - https://raw.githubusercontent.com/ewilderj/doap/master/schema/doap.rdf
