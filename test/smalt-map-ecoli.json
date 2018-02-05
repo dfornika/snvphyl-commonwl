@@ -1,5 +1,5 @@
 {
-    "index_name": "ecoli",
+    "index_name": "ecoli.small",
     "query_file": {
         "path": "input/ecoli.small_R1.fastq",
         "class": File

@@ -43,7 +43,7 @@ outputs:
   alignment:
     type: File
     outputBinding:
-      glob: $(output_filename)
+      glob: $(inputs.output_filename)
 
 doc: |
   

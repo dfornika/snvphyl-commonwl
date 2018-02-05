@@ -18,7 +18,7 @@
     "smalt_index::word_length": 13,
     "smalt_index::step_size": 6,
     "smalt_map::output_format": "bam",
-    "smalt_map::output_filename": "intermediate/ecoli.small.bam",
+    "smalt_map::output_filename": "ecoli.small.bam",
     "smalt_map::index_name": "ecoli"
 }
 

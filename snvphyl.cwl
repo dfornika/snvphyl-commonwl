@@ -1,5 +1,8 @@
 cwlVersion: v1.0
 class: Workflow
+requirements:
+  - class: StepInputExpressionRequirement
+  - class: InlineJavascriptRequirement
 
 inputs:
 - id: smalt_index::word_length
@@ -25,7 +28,7 @@ inputs:
 outputs:
 - id: alignment
   type: File
-  outputSource: '#smalt_map/alignment'
+  outputSource: 'smalt_map/alignment'
 
 steps:
 - id: smalt_index
@@ -39,17 +42,16 @@ steps:
     - {id: smalt_index}
     - {id: smalt_array}
 - id: smalt_map
-  requirements:
-    - class: StepInputExpressionRequirement
   run: tools/smalt-map.cwl
   in:
     index_name:
       source: smalt_index/smalt_index
-      valueFrom: $(self.basename)
+      valueFrom: $(self.location.replace("file://", "").replace(/\.[^/.]+$/, ""))
     query_file: '#smalt_map::R1_reads'
     mate_file: '#smalt_map::R2_reads'
     output_format: '#smalt_map::output_format'
     output_filename: '#smalt_map::output_filename'
   out:
-    - {id: alignment}
+    [alignment]
+    
 
