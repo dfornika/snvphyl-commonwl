@@ -32,7 +32,7 @@ outputs:
 
 steps:
 - id: smalt_index
-  run: tools/smalt-index.cwl
+  run: tools/smalt_index.cwl
   in:
     - {id: word_length, source: '#smalt_index::word_length'}
     - {id: step_size, source: '#smalt_index::step_size'}
@@ -42,7 +42,7 @@ steps:
     - {id: smalt_index}
     - {id: smalt_array}
 - id: smalt_map
-  run: tools/smalt-map.cwl
+  run: tools/smalt_map.cwl
   in:
     index_name:
       source: smalt_index/smalt_index
@@ -53,5 +53,9 @@ steps:
     output_filename: '#smalt_map::output_filename'
   out:
     [alignment]
+-id: samtools_mpileup
+  run: tools/samtools_mpileup.cwl
+  in:
+  out:
     
 
