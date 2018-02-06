@@ -9,36 +9,163 @@ baseCommand:
   - map
 
 inputs:
-  threads:
+  coverage:
     type: int?
     inputBinding:
       position: 1
-      prefix: -t
-  output_filename:
-    type: string
+      prefix: -c
+    doc: |
+      Threshold of the number of bases covered by k-mer seeds. [INT]
+  sw_score:
+    type: int?
     inputBinding:
       position: 2
-      prefix: -o
+      prefix: -d
+    doc: |
+      Threshold of the Smith-Waterman score relative to best. [INT]
   output_format:
-    type: string
+    type: string?
     inputBinding:
       position: 3
       prefix: -f
+    doc: |
+      Output format [sam(default)|bam|cigar|gff|ssaha].
+  input_format:
+    type: string?
+    inputBinding:
+      position: 4
+      prefix: -F
+    doc: |
+      Input format [fastq (default)|sam|bam]. [STR]
+  output_filename:
+    type: string
+    inputBinding:
+      position: 5
+      prefix: -o
+    doc: |
+  reads_insert_size_distribution_file:
+    type: File?
+    inputBinding:
+      position: 6
+      prefix: -g
+    doc: |
+      Reads insert size distribution from file. [STR]
+  max_insert_size:
+    type: int?
+    inputBinding:
+      position: 7
+      prefix: -i
+    doc: |
+      Maximum insert size for paired reads (default: 500). [INT]
+  min_insert_size:
+    type: int?
+    inputBinding:
+      position: 8
+      prefix: -j
+    doc: |
+      Minimum insert size for paired reads (default: 0). [INT]
+  library_type:
+    type: string?
+    inputBinding:
+      position: 9
+      prefix: -l
+    doc: |
+      Type of paired read library [pe|mp|pp] (default: pe). [STR]
+  alignment_score_threshold:
+    type: int?
+    inputBinding:
+      position: 10
+      prefix: -m
+    doc: |
+      Threshold of alignment score. [INT]
+  threads:
+    type: int?
+    inputBinding:
+      position: 11
+      prefix: -n
+    doc: |
+      Number of threads. [INT]
+  preserve_order:
+    type: boolean?
+    inputBinding:
+      position: 12
+      prefix: -O
+    doc: |
+      Preserve the order of the reads in the output (with '-n').
+  report_split_alignments:
+    type: boolean?
+    inputBinding:
+      position: 13
+      prefix: -p
+    doc: |
+      Report split alignments.
+  base_quality_threshold:
+    type: int?
+    inputBinding:
+      position: 14
+      prefix: -q
+    doc: |
+      Base quality threshold <= 10 (default 0).
+  random_assignment_degenerate_mappings:
+    type: int?
+    inputBinding:
+      position:
+      prefix: -r
+    doc: |
+      Random assignment of degen. mappings (mark 'unmapped' if < 0). [INT]
+  set_alignment_penalties:
+    type: string?
+    inputBinding:
+      position: 15
+      prefix: -S
+    doc: |
+      Set alignment penalties, e.g 'match=1,mismatch=-2,gapopen=-4,gapext=-3' (default). [STR]
+  temp_dir:
+    type: string?
+    inputBinding:
+      position: 16
+      prefix: -T
+    doc: |
+      Write temporary files to specified directory.
+  use_complexity_weighted_sw_scores:
+    type: boolean?
+    inputBinding:
+      position: 17
+      prefix: -w
+    doc: |
+      Use complexity weighted Smith-Waterman scores.
+  exhaustive_search:
+    type: boolean?
+    inputBinding:
+      position: 18
+      prefix: -x
+    doc: |
+      Exhaustive search for alignments (at the cost of speed).
+  identity_threshold:
+    type: float?
+    inputBinding:
+      position: 19
+      prefix: -y
+    doc: |
+      Identity threshold (default: 0).
   index_name:
     type: string
     inputBinding:
-      position: 4
+      position: 20
     doc: |
       Index basename
   query_file:
     type: File
     inputBinding:
-      position: 5
+      position: 21
+    doc: |
+      Input sequence reads (R1)
   mate_file:
     type: File?
     inputBinding:
-      position: 6
-
+      position: 22
+    doc: |
+      Input sequence reads (R2)
 outputs:
   alignment:
     type: File
@@ -71,7 +198,7 @@ doc: |
     -r [INT] Random assignment of degen. mappings (mark 'unmapped' if < 0).
     -S [STR] Set alignment penalties,
              e.g 'match=1,mismatch=-2,gapopen=-4,gapext=-3' (default).
-    -T [STR] Write temporary files do specified directory.
+    -T [STR] Write temporary files to specified directory.
     -w       Use complexity weighted Smith-Waterman scores.
     -x       Exhaustive search for alignments (at the cost of speed).
     -y [FLT] Identity threshold (default: 0).
