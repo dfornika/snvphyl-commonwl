@@ -53,9 +53,4 @@ steps:
     output_filename: '#smalt_map::output_filename'
   out:
     [alignment]
--id: samtools_mpileup
-  run: tools/samtools_mpileup.cwl
-  in:
-  out:
-    
 

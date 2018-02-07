@@ -9,6 +9,27 @@ baseCommand:
   - mpileup
 
 inputs:
+  compute_genotype_likelihoods:
+    type: boolean?
+    inputBinding:
+      position:
+      prefix: --VCF
+    doc: |
+      Compute genotype likelihoods and output them in the variant call format (VCF). Output is bgzip-compressed VCF unless -u option is set.
+  uncompressed:
+    type: boolean?
+    inputBinding:
+      position:
+      prefix: --uncompressed
+    doc: |
+      Generate uncompressed VCF/BCF output, which is preferred for piping.
+  max_depth:
+    type: int?
+    inputBinding:
+      position:
+      prefix: --max-depth
+    doc: |
+      At a position, read maximally INT reads per input BAM. [250]
   alignment:
     type: File
     format: edam:format_2572
