@@ -1,6 +1,9 @@
 cwlVersion: v1.0
 class: CommandLineTool
 label: find_repeats
+doc: Find repeats in a fasta file
+#"doap:homepage": https://github.com/phac-nml/snvphyl-tools
+#"doap:license": http://spdx.org/licenses/Apache-2.0
 
 baseCommand:
   - find-repeats.pl
