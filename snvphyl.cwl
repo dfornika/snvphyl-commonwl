@@ -5,6 +5,9 @@ requirements:
   - class: InlineJavascriptRequirement
 
 inputs:
+- id: reference
+  type: File
+  doc: Reference file in fasta format
 - id: smalt_index::word_length
   type: int
 - id: smalt_index::step_size
@@ -21,9 +24,6 @@ inputs:
 - id: smalt_map::R2_reads
   type: File
   doc: list of files containing the second end of paired end reads in fasta or fastq  
-- id: reference
-  type: File
-  doc: Reference file in fasta format
 
 outputs:
 - id: alignment
@@ -31,11 +31,18 @@ outputs:
   outputSource: 'smalt_map/alignment'
 
 steps:
+- id: find_repeats
+  run: tools/find_repeats.cwl
+  in:
+    - {id: repeat_length, source: '#find_repeats::repeat_length', default: 150}
+    - {id: percent_identity, source: '#find_repeats::percent_identity', default: 90}
+  out:
+    [repeats_table] 
 - id: smalt_index
   run: tools/smalt_index.cwl
   in:
-    - {id: word_length, source: '#smalt_index::word_length'}
-    - {id: step_size, source: '#smalt_index::step_size'}
+    - {id: word_length, source: '#smalt_index::word_length', default: 13}
+    - {id: step_size, source: '#smalt_index::step_size', default: 6}
     - {id: reference, source: '#reference'}
     - {id: index_name, source: '#smalt_map::index_name'}
   out:
