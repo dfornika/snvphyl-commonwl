@@ -36,6 +36,7 @@ steps:
   in:
     - {id: repeat_length, source: '#find_repeats::repeat_length', default: 150}
     - {id: percent_identity, source: '#find_repeats::percent_identity', default: 90}
+    - {id: input_fasta, source: '#reference'}
   out:
     [repeats_table] 
 - id: smalt_index
