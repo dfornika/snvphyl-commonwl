@@ -11,7 +11,7 @@ inputs:
   bam:
     type: File
     inputBinding:
-      position:
+      position: 1
       prefix: --bam
     doc: |
       The location for a specific BAM file in the dataset. Multiple BAM
@@ -21,7 +21,7 @@ inputs:
   minimum_depth:
     type: int?
     inputBinding:
-      position: 
+      position: 2
       prefix: --min-depth
     doc: |
       The minimum depth of coverage required at each genome position to be
@@ -29,7 +29,7 @@ inputs:
   minimum_percentage_mapped:
     type: int?
     inputBinding:
-      position:
+      position: 3
       prefix: --min-map
     doc: |
       The minimum percent mapped to reference for each strain, pipeline
@@ -38,21 +38,36 @@ inputs:
   cores:
     type: int?
     inputBinding:
-      position:
+      position: 4
       prefix: --cores
     doc: |
       The number of CPU cores that should be used for the calculations.
+  output_report_path:
+    type: string
+    inputBinding:
+      position: 5
+      prefix: --output
+    doc: |
+      Path to write human readable report.
   output_strains_path:
     type: string
     inputBinding:
-      position:
+      position: 6
       prefix: --out_strains
     doc: |
       Path to write list of strain(s) one per line for filter File
       collection tool or vcf2snvalignment itself
       
 outputs:
-  
+  mapping_quality_report:
+    type: File
+    outputBinding:
+      glob: $(output_report_path)
+  strains_list:
+    type: File
+    outputBinding:
+      glob: $(output_strains_path)
+
 doc: |
   Usage:
       verify_mapping_quality.pl --bam bamX=/inputDirrectory/bamfile.bam
