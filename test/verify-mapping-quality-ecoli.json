@@ -1,0 +1,12 @@
+{
+    "$namespaces": {
+        "edam": "http://edamontology.org/"
+    },
+    "bam": {
+        "path": "intermediate/ecoli.small.sorted.bam",
+        "class": File,
+        "format": "edam:format_2572"
+    },
+    "output_report_path": "intermediate/mapping_quality_report.txt",
+    "output_strains_path": "intermediate/strains_list.txt"
+}
