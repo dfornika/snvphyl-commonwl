@@ -1,9 +1,13 @@
 {
-  "word_length": 13,
-  "step_size": 6,
-  "index_name": "ecoli",
-  "reference": {
-    "path": "input/ecoli_k12_ref.fa",
-    "class": File
-  }
+    "$namespaces": {
+        "edam": "http://edamontology.org/"
+    },
+    "word_length": 13,
+    "step_size": 6,
+    "index_name": "ecoli",
+    "reference": {
+	"path": "input/ecoli_k12_ref.fa",
+	"class": File,
+	"format": "edam:format_1929"
+    }
 }

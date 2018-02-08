@@ -1,12 +1,17 @@
 {
+    "$namespaces": {
+        "edam": "http://edamontology.org/"
+    },
     "index_name": "ecoli.small",
     "query_file": {
         "path": "input/ecoli.small_R1.fastq",
-        "class": File
+        "class": File,
+	"format": "edam:format_1930"
     },
     "mate_file": {
         "path": "input/ecoli.small_R2.fastq",
-        "class": File
+        "class": File,
+	"format": "edam:format_1930"
     },
     "output_format": "bam",
     "output_filename": "ecoli.small.bam"
