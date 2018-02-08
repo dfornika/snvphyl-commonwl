@@ -25,10 +25,10 @@ inputs:
 - id: smalt_map::output_filename
   type: string
 - id: smalt_map::R1_reads
-  type: File
+  type: File[]
   doc: list of files containing the first end of paired end reads in fasta or fastq
 - id: smalt_map::R2_reads
-  type: File
+  type: File[]
   doc: list of files containing the second end of paired end reads in fasta or fastq  
 
 outputs:
