@@ -2,17 +2,21 @@
     "$namespaces": {
         "edam": "http://edamontology.org/"
     },
-    "index_name": "ecoli.small",
-    "query_file": {
+    "index_name": "test/intermediate/ecoli",
+    "query_files": [
+    {
         "path": "input/ecoli.small_R1.fastq",
-        "class": File,
-	"format": "edam:format_1930"
-    },
-    "mate_file": {
+        "class": "File",
+        "format": "edam:format_1930"
+    }
+    ],
+    "mate_files": [
+    {
         "path": "input/ecoli.small_R2.fastq",
-        "class": File,
-	"format": "edam:format_1930"
-    },
+        "class": "File",
+        "format": "edam:format_1930"
+    }
+    ],
     "output_format": "bam",
     "output_filename": "ecoli.small.bam"
 }

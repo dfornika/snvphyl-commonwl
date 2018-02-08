@@ -3,6 +3,6 @@
     "percent_identity": 90,
     "input_fasta": {
         "path": "input/ecoli_k12_ref.fa",
-        "class": File
+        "class": "File"
     }
 }

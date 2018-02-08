@@ -1,6 +1,7 @@
 cwlVersion: v1.0
 class: CommandLineTool
-label: 
+label:
+doc: 
 #"doap:homepage":
 #"doap:license":
 

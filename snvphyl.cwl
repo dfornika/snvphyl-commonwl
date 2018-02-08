@@ -64,9 +64,9 @@ steps:
     index_name:
       source: '#smalt_index/smalt_index'
       valueFrom: $(self.location.replace("file://", "").replace(/\.[^/.]+$/, ""))
-    query_file:
+    query_files:
       source: '#smalt_map::R1_reads'
-    mate_file:
+    mate_files:
       source: '#smalt_map::R2_reads'
     output_format:
       source: '#smalt_map::output_format'

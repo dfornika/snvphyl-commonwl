@@ -154,7 +154,7 @@ inputs:
       position: 20
     doc: |
       Index basename
-  query_file:
+  query_files:
     type:
       type: array
       items: File
@@ -162,7 +162,7 @@ inputs:
       position: 21
     doc: |
       Input sequence reads (R1)
-  mate_file:
+  mate_files:
     type:
       type: array
       items: File
