@@ -12,14 +12,14 @@
         {
             "path": "input/ecoli.small_R1.fastq",
             "class": File,
-            "format": "edam:format_1929"
+            "format": "edam:format_1930"
         }
     ],
     "smalt_map::R2_reads": [
         {
             "path": "input/ecoli.small_R2.fastq",
             "class": File,
-            "format": "edam:format_1929"
+            "format": "edam:format_1930"
         }
     ],
     "smalt_map::output_format": "bam",
