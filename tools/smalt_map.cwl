@@ -155,13 +155,17 @@ inputs:
     doc: |
       Index basename
   query_file:
-    type: File
+    type:
+      type: array
+      items: File
     inputBinding:
       position: 21
     doc: |
       Input sequence reads (R1)
   mate_file:
-    type: File?
+    type:
+      type: array
+      items: File
     inputBinding:
       position: 22
     doc: |
