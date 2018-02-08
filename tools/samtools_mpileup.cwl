@@ -1,8 +1,16 @@
-cwlVersion: v1.0
-class: CommandLineTool
-label: samtools_mpileup
-#"doap:homepage": http://www.htslib.org/
-#"doap:license": http://spdx.org/licenses/MIT
+"cwlVersion": "v1.0"
+"class": "CommandLineTool"
+
+$namespaces:
+  edam: http://edamontology.org/
+  doap: http://usefulinc.com/ns/doap#
+$schemas:
+  - http://edamontology.org/EDAM_1.18.owl
+  - https://raw.githubusercontent.com/ewilderj/doap/master/schema/doap.rdf
+
+"label": "samtools_mpileup"
+"doap:homepage": "http://www.htslib.org/"
+"doap:license": "http://spdx.org/licenses/MIT"
 
 baseCommand:
   - samtools
@@ -80,10 +88,3 @@ doc: |
        -P STR       comma separated list of platforms for indels [all]
   
   Notes: Assuming diploid individuals.
-
-$namespaces:
-  edam: http://edamontology.org/
-  doap: http://usefulinc.com/ns/doap#
-$schemas:
-  - http://edamontology.org/EDAM_1.18.owl
-  - https://raw.githubusercontent.com/ewilderj/doap/master/schema/doap.rdf

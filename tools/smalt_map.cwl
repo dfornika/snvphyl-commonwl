@@ -1,8 +1,16 @@
-cwlVersion: v1.0
-class: CommandLineTool
-label: smalt_map
-#"doap:homepage": http://www.sanger.ac.uk/science/tools/smalt-0
-#"doap:license": http://spdx.org/licenses/GPL-3.0
+"cwlVersion": "v1.0"
+"class": "CommandLineTool"
+
+$namespaces:
+  edam: http://edamontology.org/
+  doap: http://usefulinc.com/ns/doap#
+$schemas:
+  - http://edamontology.org/EDAM_1.18.owl
+  - https://raw.githubusercontent.com/ewilderj/doap/master/schema/doap.rdf
+
+"label": "smalt_map"
+"doap:homepage": "http://www.sanger.ac.uk/science/tools/smalt-0"
+"doap:license": "http://spdx.org/licenses/GPL-3.0"
 
 baseCommand:
   - smalt

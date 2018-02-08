@@ -1,9 +1,19 @@
-cwlVersion: v1.0
-class: CommandLineTool
-label: find_repeats
-doc: Find repeats in a fasta file
-#"doap:homepage": https://github.com/phac-nml/snvphyl-tools
-#"doap:license": http://spdx.org/licenses/Apache-2.0
+"cwlVersion": "v1.0"
+"class": "CommandLineTool"
+
+$namespaces:
+  edam: http://edamontology.org/
+  doap: http://usefulinc.com/ns/doap#
+$schemas:
+  - http://edamontology.org/EDAM_1.18.owl
+  - https://raw.githubusercontent.com/ewilderj/doap/master/schema/doap.rdf
+
+"label": "find_repeats"
+"doc": "Find repeats in a fasta file"
+"doap:homepage": "https://github.com/phac-nml/snvphyl-tools"
+"doap:license": "http://spdx.org/licenses/Apache-2.0"
+
+
 
 baseCommand:
   - find-repeats.pl
@@ -44,10 +54,3 @@ doc: |
         -l|--min-length: Minimum length of repeat region (150).
         -p|--min-pid: Minimum PID of repeat region (90).
         -k|--keep-temp: Keep around temporary nucmer/coords files (no).
-
-$namespaces:
-  edam: http://edamontology.org/
-  doap: http://usefulinc.com/ns/doap#
-$schemas:
-  - http://edamontology.org/EDAM_1.18.owl
-  - https://raw.githubusercontent.com/ewilderj/doap/master/schema/doap.rdf

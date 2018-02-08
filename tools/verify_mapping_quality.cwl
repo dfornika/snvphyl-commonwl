@@ -1,8 +1,16 @@
-cwlVersion: v1.0
-class: CommandLineTool
-label: verify_mapping_quality
-#"doap:homepage": https://github.com/phac-nml/snvphyl-tools
-#"doap:license": http://spdx.org/licenses/Apache-2.0
+"cwlVersion": "v1.0"
+"class": "CommandLineTool"
+
+$namespaces:
+  edam: http://edamontology.org/
+  doap: http://usefulinc.com/ns/doap#
+$schemas:
+  - http://edamontology.org/EDAM_1.18.owl
+  - https://raw.githubusercontent.com/ewilderj/doap/master/schema/doap.rdf
+
+"label": "verify_mapping_quality"
+"doap:homepage": "https://github.com/phac-nml/snvphyl-tools"
+"doap:license": "http://spdx.org/licenses/Apache-2.0"
 
 baseCommand:
   - verify_mapping_quality.pl
@@ -101,10 +109,3 @@ doc: |
   
       -h, --help
           To displays help screen.
-
-$namespaces:
-  edam: http://edamontology.org/
-  doap: http://usefulinc.com/ns/doap#
-$schemas:
-  - http://edamontology.org/EDAM_1.18.owl
-  - https://raw.githubusercontent.com/ewilderj/doap/master/schema/doap.rdf

@@ -1,9 +1,17 @@
-cwlVersion: v1.0
-class: CommandLineTool
-label: smalt_index
-doc: Generate an index file for smalt alignment.
-#"doap:homepage": http://www.sanger.ac.uk/science/tools/smalt-0
-#"doap:license": http://spdx.org/licenses/GPL-3.0
+"cwlVersion": "v1.0"
+"class": "CommandLineTool"
+
+$namespaces:
+  edam: http://edamontology.org/
+  doap: http://usefulinc.com/ns/doap#
+$schemas:
+  - http://edamontology.org/EDAM_1.18.owl
+  - https://raw.githubusercontent.com/ewilderj/doap/master/schema/doap.rdf
+
+"label": "smalt_index"
+"doc": "Generate an index file for smalt alignment."
+"doap:homepage": "http://www.sanger.ac.uk/science/tools/smalt-0"
+"doap:license": "http://spdx.org/licenses/GPL-3.0"
 
 baseCommand:
   - smalt
@@ -58,10 +66,3 @@ doc: |
     -H       Print more extensive help on options.
     -k [INT] Length of the k-mer words indexed.
     -s [INT] Sample every <stepsiz>-th k-mer word (stride).
-
-$namespaces:
-  edam: http://edamontology.org/
-  doap: http://usefulinc.com/ns/doap#
-$schemas:
-  - http://edamontology.org/EDAM_1.18.owl
-  - https://raw.githubusercontent.com/ewilderj/doap/master/schema/doap.rdf
