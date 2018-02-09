@@ -198,7 +198,7 @@ doc: |
     
     -f [STR] Output format [sam(default)|bam|cigar|gff|ssaha].
              Ext: [sam|bam]:nohead,x,clip.
-	     
+       
     -F [STR] Input format [fastq (default)|sam|bam].
     
     -g [STR] Reads insert size distribution from file (see 'sample' task).
@@ -227,7 +227,7 @@ doc: |
     
     -S [STR] Set alignment penalties,
              e.g 'match=1,mismatch=-2,gapopen=-4,gapext=-3' (default).
-	     
+    
     -T [STR] Write temporary files to specified directory.
     
     -w       Use complexity weighted Smith-Waterman scores.
