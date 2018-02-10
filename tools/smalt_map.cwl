@@ -8,6 +8,19 @@ $schemas:
   - http://edamontology.org/EDAM_1.18.owl
   - https://raw.githubusercontent.com/ewilderj/doap/master/schema/doap.rdf
 
+"hints": [
+  {
+    "class": "SoftwareRequirement",
+    "packages": [
+      {
+        "package": "smalt",
+        "version": ["0.7.6"],
+        "specs": ["https://anaconda.org/bioconda/smalt"]
+      }
+    ]
+  }
+]
+
 "label": "smalt_map"
 "doap:homepage": "http://www.sanger.ac.uk/science/tools/smalt-0"
 "doap:license": "http://spdx.org/licenses/GPL-3.0"

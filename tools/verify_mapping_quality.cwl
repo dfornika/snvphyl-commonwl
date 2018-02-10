@@ -8,6 +8,19 @@ $schemas:
   - http://edamontology.org/EDAM_1.18.owl
   - https://raw.githubusercontent.com/ewilderj/doap/master/schema/doap.rdf
 
+"hints": [
+  {
+    "class": "SoftwareRequirement",
+    "packages": [
+      {
+        "package": "snvphyl-tools",
+        "version": ["1.8.1"],
+        "specs": ["https://anaconda.org/bioconda/snvphyl-tools"]
+      }
+    ]
+  }
+]
+
 "label": "verify_mapping_quality"
 "doap:homepage": "https://github.com/phac-nml/snvphyl-tools"
 "doap:license": "http://spdx.org/licenses/Apache-2.0"
@@ -20,7 +33,8 @@ inputs:
     type: File
     inputBinding:
       position: 1
-      prefix: --bam
+      prefix: --bam bam1=
+      separate: false
     doc: |
       The location for a specific BAM file in the dataset. Multiple BAM
           files can be input. Example with 3 BAM files: --bam

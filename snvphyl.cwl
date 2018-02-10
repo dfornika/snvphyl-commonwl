@@ -29,7 +29,8 @@ inputs:
   doc: list of files containing the first end of paired end reads in fasta or fastq
 - id: smalt_map::R2_reads
   type: File[]
-  doc: list of files containing the second end of paired end reads in fasta or fastq  
+  doc: list of files containing the second end of paired end reads in fasta or fastq
+  
 
 outputs:
 - id: alignment
@@ -75,4 +76,21 @@ steps:
       source: '#smalt_map::output_filename'
   out:
     - { id: alignment }
-
+- id: freebayes
+  run: tools/freebayes.cwl
+  in:
+    alignment_file:
+      source: '#smalt_map/alignment'
+    ploidy:
+      default: 1
+  out:
+    - { id: freebayes::vcf }
+-id: samtools_mplieup
+  run: tools/samtools_mpileup.cwl
+  in:
+    alignment_files:
+      source: '#smalt_map/alignment'
+    generate_genotype_likelihoods_vcf:
+      default: true
+  out:
+    - {id: samtools_mpileup::vcf }

@@ -8,6 +8,19 @@ $schemas:
   - http://edamontology.org/EDAM_1.18.owl
   - https://raw.githubusercontent.com/ewilderj/doap/master/schema/doap.rdf
 
+"hints": [
+  {
+    "class": "SoftwareRequirement",
+    "packages": [
+      {
+        "package": "snvphyl-tools",
+        "version": ["1.8.1"],
+        "specs": ["https://anaconda.org/bioconda/snvphyl-tools"]
+      }
+    ]
+  }
+]
+
 "label": "find_repeats"
 "doc": "Find repeats in a fasta file"
 "doap:homepage": "https://github.com/phac-nml/snvphyl-tools"
