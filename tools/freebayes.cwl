@@ -33,10 +33,9 @@ inputs:
       Input alignment file in bam format.
 
 outputs:
-  type: File
-  outputBinding:
-    glob: $(*.vcf)
-  
+  variants:
+    type: stdout
+
 doc: |
   
   usage: freebayes [OPTION] ... [BAM FILE] ... 

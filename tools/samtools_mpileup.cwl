@@ -70,6 +70,7 @@ inputs:
     format: edam:format_1929
     inputBinding:
       position:
+      prefix: -f
   alignment_files:
     type: File[]
     format: edam:format_2572
@@ -77,8 +78,9 @@ inputs:
       position: 
     
 outputs:
-  outputBinding:
-  
+  variants:
+    outputBinding:
+    
 doc: |
   Usage: samtools mpileup [options] in1.bam [in2.bam [...]]
   

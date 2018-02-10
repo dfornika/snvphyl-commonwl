@@ -39,6 +39,12 @@ outputs:
 - id: repeats_table
   type: File
   outputSource: 'find_repeats/repeats_table'
+- id: freebayes::variants
+  type: File
+  outputSource: 'freebayes/variants'
+- id: samtools_mpileup::variants
+  type: File
+  outputSource: 'samtools_mpileup/variants'
 
 steps:
 - id: find_repeats
@@ -84,8 +90,8 @@ steps:
     ploidy:
       default: 1
   out:
-    - { id: freebayes::vcf }
--id: samtools_mplieup
+    - { id: variants }
+- id: samtools_mplieup
   run: tools/samtools_mpileup.cwl
   in:
     alignment_files:
@@ -93,4 +99,4 @@ steps:
     generate_genotype_likelihoods_vcf:
       default: true
   out:
-    - {id: samtools_mpileup::vcf }
+    - {id: variants }
